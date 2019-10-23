@@ -21,6 +21,7 @@ Horn.prototype.render = function() {
   hornClone.find('p').text(this.description);
   hornClone.removeClass('clone');
   hornClone.attr('class', this.title);
+  $('#photo-template').hide();
 };
 
 Horn.getJsonData= () => {

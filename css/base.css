@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Abel|Oswald:700|Yellowtail|Patrick+Hand');
 
 * {
-  font-family: times;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 body {
-  background: lightblue;
+  background: #159192;
+  padding: 50px;
 }
 
