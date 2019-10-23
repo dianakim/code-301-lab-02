@@ -34,10 +34,10 @@ MIT License
 Built with Javascript, jQuery, HTML, CSS
 
 Feature #1: Display images
-Estimate of time needed to complete: _____
-Start time: _____
-Finish time: _____
-Actual time needed to complete: _____
+Estimate of time needed to complete: 2 hours
+Start time: 6pm
+Finish time: 9pm
+Actual time needed to complete: 3 hours
 
 
 Feature #2: Filter images
