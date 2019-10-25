@@ -18,26 +18,26 @@ Horn.prototype.render = function() {
 
   // if this.keyword isn't already in the allOptions array
   // add it to the array and append to dropdown
-  allOptions.forEach(function(value){
-    if(this.keyword === value){
-      console.log('keyword: ', this.keyword);
-      console.log('value: ', value);
-    } else {
-      $('select').append('<option class="keyword-clone"></option>');
-      let keywordOptionClone = $('option[class="keyword-clone"]');
-      keywordOptionClone.text(this.keyword);
-      keywordOptionClone.removeClass('keyword-clone');
-      keywordOptionClone.attr('class', this.keyword);
+  // allOptions.forEach(function(value){
+  //   if(this.keyword === value){
+  //     console.log('keyword: ', this.keyword);
+  //     console.log('value: ', value);
+  //   } else {
+  //     $('select').append('<option class="keyword-clone"></option>');
+  //     let keywordOptionClone = $('option[class="keyword-clone"]');
+  //     keywordOptionClone.text(this.keyword);
+  //     keywordOptionClone.removeClass('keyword-clone');
+  //     keywordOptionClone.attr('class', this.keyword);
 
-      allOptions.push(value);
-    }
-  });
+  //     allOptions.push(value);
+  //   }
+  // });
 
-  // $('select').append('<option class="keyword-clone"></option>');
-  // let keywordOptionClone = $('option[class="keyword-clone"]');
-  // keywordOptionClone.text(this.keyword);
-  // keywordOptionClone.removeClass('keyword-clone');
-  // keywordOptionClone.attr('class', this.keyword);
+  $('select').append('<option class="keyword-clone"></option>');
+  let keywordOptionClone = $('option[class="keyword-clone"]');
+  keywordOptionClone.text(this.keyword);
+  keywordOptionClone.removeClass('keyword-clone');
+  keywordOptionClone.attr('class', this.keyword);
 
 
 
