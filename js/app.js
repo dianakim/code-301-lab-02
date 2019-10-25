@@ -35,6 +35,7 @@ Horn.prototype.render = function() {
 
   $('select').append('<option class="keyword-clone"></option>');
   let keywordOptionClone = $('option[class="keyword-clone"]');
+  hornClone.attr('data-keyword', this.keyword);
   keywordOptionClone.text(this.keyword);
   keywordOptionClone.removeClass('keyword-clone');
   keywordOptionClone.attr('class', this.keyword);
@@ -44,7 +45,7 @@ Horn.prototype.render = function() {
   hornClone.html(hornHtml);
   hornClone.find('h2').text(this.title);
   hornClone.find('img').attr('src', this.image_url);
-  hornClone.find('img').attr('data-keyword', this.keyword);
+  // hornClone.find('img').attr('data-keyword', this.keyword);
   hornClone.find('p').text(this.description);
   hornClone.removeClass('clone');
   hornClone.attr('class', this.title);
@@ -53,8 +54,10 @@ Horn.prototype.render = function() {
 
 $('select[name="keyword"]').on('change', function() {
   let $selection = $(this).val();
-  $('img').hide();
-  $(`img[data-keyword="${$selection}"]`).show();
+  // $('img').hide();
+  // $(`img[data-keyword="${$selection}"]`).show();
+  $('div').hide();
+  $(`div[data-keyword="${$selection}"]`).show();
 });
 
 Horn.getJsonData= () => {
