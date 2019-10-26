@@ -31,14 +31,16 @@ main {
 }
 
 div {
-  width: 30%;
-  margin: 10px;
-  display: inline-block;
+  float: left;
+  width: 33.33%;
 }
 
 img {
-  width: 100%;
-  box-sizing: border-box;
+  width: 80%;
+}
+
+div:nth-child(3n+2) { 
+  clear: left;
 }
 
 footer {

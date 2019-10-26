@@ -48,8 +48,8 @@ Actual time needed to complete: 3:14
 
 
 Feature #3: Style the application
-Estimate of time needed to complete: _____
-Start time: _____
+Estimate of time needed to complete: 1 hour
+Start time: 17:20
 Finish time: _____
 Actual time needed to complete: _____
 
