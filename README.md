@@ -34,8 +34,8 @@ MIT License
 Built with Javascript, jQuery, Handelbars, HTML, CSS
 
 Feature #1: Pagination
-Estimate of time needed to complete: 
-Start time: 
+Estimate of time needed to complete: 1 hour
+Start time: 23:55
 Finish time: 
 Actual time needed to complete: 
 
