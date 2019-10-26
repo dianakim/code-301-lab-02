@@ -8,7 +8,7 @@ I build an app with a direct and powerful purpose. It does all of the things tha
 
 ### Links and Resources
 * [submission PR](http://xyz.com)
-* Any Links you used as reference
+* https://dockyard.com/blog/2019/04/16/css-selectors-for-the-entire-last-row-of-a-dynamic-grid
 
 ### Setup
 
@@ -50,8 +50,8 @@ Actual time needed to complete: 3:14
 Feature #3: Style the application
 Estimate of time needed to complete: 1 hour
 Start time: 17:20
-Finish time: _____
-Actual time needed to complete: _____
+Finish time: 18:10
+Actual time needed to complete: 0:50
 
 
 Stretch Goal: Sort the images
