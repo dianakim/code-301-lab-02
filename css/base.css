@@ -1,10 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Abel|Oswald:700|Yellowtail|Patrick+Hand');
-
 * {
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  /* font-family: 'Alice', serif; */
+  font-family: 'Forum', cursive;
 }
 
 body {
   background: #159192;
+  padding: 10%;
 }
-
