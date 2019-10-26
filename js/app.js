@@ -9,44 +9,20 @@ function Horn(horn) {
 }
 
 Horn.allHorns = [];
-let allOptions = [];
+let allKeywords = [];
 
 Horn.prototype.render = function() {
   $('main').append('<div class="clone"></div>');
   let hornClone = $('div[class="clone"]');
   let hornHtml = $('#photo-template').html();
 
-  // if this.keyword isn't already in the allOptions array
-  // add it to the array and append to dropdown
-  // allOptions.forEach(function(value){
-  //   if(this.keyword === value){
-  //     console.log('keyword: ', this.keyword);
-  //     console.log('value: ', value);
-  //   } else {
-  //     $('select').append('<option class="keyword-clone"></option>');
-  //     let keywordOptionClone = $('option[class="keyword-clone"]');
-  //     keywordOptionClone.text(this.keyword);
-  //     keywordOptionClone.removeClass('keyword-clone');
-  //     keywordOptionClone.attr('class', this.keyword);
-
-  //     allOptions.push(value);
-  //   }
-  // });
-
-  $('select').append('<option class="keyword-clone"></option>');
-  let keywordOptionClone = $('option[class="keyword-clone"]');
-  hornClone.attr('data-keyword', this.keyword);
-  keywordOptionClone.text(this.keyword);
-  keywordOptionClone.removeClass('keyword-clone');
-  keywordOptionClone.attr('class', this.keyword);
-
-
+  allKeywords.push(this.keyword);
 
   hornClone.html(hornHtml);
   hornClone.find('h2').text(this.title);
   hornClone.find('img').attr('src', this.image_url);
-  // hornClone.find('img').attr('data-keyword', this.keyword);
   hornClone.find('p').text(this.description);
+  hornClone.attr('data-keyword', this.keyword);
   hornClone.removeClass('clone');
   hornClone.attr('class', this.title);
   $('#photo-template').hide();
@@ -54,13 +30,25 @@ Horn.prototype.render = function() {
 
 $('select[name="keyword"]').on('change', function() {
   let $selection = $(this).val();
-  // $('img').hide();
-  // $(`img[data-keyword="${$selection}"]`).show();
   $('div').hide();
   $(`div[data-keyword="${$selection}"]`).show();
 });
 
-Horn.getJsonData= () => {
+function loadFilterList(){
+  // first, remove duplicate values in allKeywords array
+  const uniqueKeywords = Array.from(new Set(allKeywords));
+
+  // for each item in uniqueKeywords, add a new dropdown list item
+  $.each(uniqueKeywords, function(index, value){
+    $('select').append('<option class="keyword-clone"></option>');
+    let keywordOptionClone = $('option[class="keyword-clone"]');
+    keywordOptionClone.text(value);
+    keywordOptionClone.removeClass('keyword-clone');
+    keywordOptionClone.attr('class', value);
+  });
+}
+
+Horn.getJsonData = () => {
   $.get('../data/page-1.json', 'json')
     .then(data => {
       data.forEach(item => {
@@ -72,6 +60,11 @@ Horn.getJsonData= () => {
 
 Horn.loadHorns = () => {
   Horn.allHorns.forEach(horn => horn.render());
+  loadFilterList();
 };
 
 $(() => Horn.getJsonData());
+
+// $(document).ready( () => {
+//   Horn.getJsonData();
+// });
