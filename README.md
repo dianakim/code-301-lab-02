@@ -1,10 +1,10 @@
-# LAB 02
+# LAB 03
 
-## jQuery Selectors and Events
+## Flexbox and Templating
 
 I build an app with a direct and powerful purpose. It does all of the things that it accomplishes well. I should describe the purpose and functionality so those that visit my README understand the app
 
-### Author: Diana Kim & Tammy Ip
+### Author: Diana Kim
 
 ### Links and Resources
 * [submission PR](http://xyz.com)
@@ -31,27 +31,27 @@ I build an app with a direct and powerful purpose. It does all of the things tha
 
 MIT License
 
-Built with Javascript, jQuery, HTML, CSS
+Built with Javascript, jQuery, Handelbars, HTML, CSS
 
-Feature #1: Display images
-Estimate of time needed to complete: 2 hours
-Start time: 6pm
-Finish time: 9pm
-Actual time needed to complete: 3 hours
-
-
-Feature #2: Filter images
-Estimate of time needed to complete: 3 hours  
-Start time: 14:30
-Finish time: 17:16
-Actual time needed to complete: 3:14
+Feature #1: Pagination
+Estimate of time needed to complete: 
+Start time: 
+Finish time: 
+Actual time needed to complete: 
 
 
-Feature #3: Style the application
-Estimate of time needed to complete: 1 hour
-Start time: 17:20
-Finish time: 18:10
-Actual time needed to complete: 0:50
+Feature #2: Templating
+Estimate of time needed to complete: 
+Start time: 
+Finish time: 
+Actual time needed to complete: 
+
+
+Feature #3: Styling with Flexbox
+EEstimate of time needed to complete: 
+Start time: 
+Finish time: 
+Actual time needed to complete: 
 
 
 Stretch Goal: Sort the images
