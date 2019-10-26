@@ -38,6 +38,7 @@ $('.page').on('click', function() {
   let $selection = $(this).text();
   let jsonFilePath = '';
   $('div').remove();
+  allKeywords = [];
 
   // empty out the allHorns array
   Horn.allHorns = [];
