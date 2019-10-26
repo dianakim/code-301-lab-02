@@ -34,9 +34,28 @@ $('select[name="keyword"]').on('change', function() {
   $(`div[data-keyword="${$selection}"]`).show();
 });
 
+$('.page').on('click', function() {
+  let $selection = $(this).text();
+  let jsonFilePath = '';
+  $('div').remove();
+
+  // empty out the allHorns array
+  Horn.allHorns = [];
+
+  if ($selection === 'Page 1'){
+    jsonFilePath = 'data/page-1.json';
+  } else {
+    jsonFilePath = 'data/page-2.json';
+  }
+  Horn.getJsonData(jsonFilePath);
+});
+
 function loadFilterList(){
   // first, remove duplicate values in allKeywords array
   const uniqueKeywords = Array.from(new Set(allKeywords));
+  let keyList = $('select[id="keyword-dropdown"]');
+  // empty dropdown list
+  keyList.find('option').not(':first').remove();
 
   // for each item in uniqueKeywords, add a new dropdown list item
   $.each(uniqueKeywords, function(index, value){
@@ -48,8 +67,8 @@ function loadFilterList(){
   });
 }
 
-Horn.getJsonData = () => {
-  $.get('data/page-1.json', 'json')
+Horn.getJsonData = (filePath) => {
+  $.get(filePath, 'json')
     .then(data => {
       data.forEach(item => {
         Horn.allHorns.push(new Horn(item));
@@ -63,7 +82,7 @@ Horn.loadHorns = () => {
   loadFilterList();
 };
 
-$(() => Horn.getJsonData());
+$(() => Horn.getJsonData('data/page-1.json'));
 
 // $(document).ready( () => {
 //   Horn.getJsonData();

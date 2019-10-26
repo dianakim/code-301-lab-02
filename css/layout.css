@@ -2,6 +2,27 @@ header {
   text-align: center;
 }
 
+ul {
+  width: 180px;
+  margin: auto;
+  text-align: center;
+  overflow: hidden; 
+  padding: 5px;
+}
+
+li {
+  float: left;
+  width: 50%;
+  margin: 0 auto;
+  font-family: 'Alice', serif;
+  transition: all .25s;
+  color: #3D3D3D;
+}
+
+li:hover {
+  color: rgb(233, 151, 75);
+}
+
 h1 {
   font-size: 60px;
   margin-bottom: 5px;
@@ -11,6 +32,7 @@ h1 {
 select {
   width: 170px;
   margin: 15px auto;
+  font-size: 16px;
 }
 
 h1, h2 {
@@ -43,6 +65,7 @@ div {
 img {
   width: 80%;
   margin-bottom: 10px;
+  border-radius: 3%;
 }
 
 div:nth-child(3n+2) { 
