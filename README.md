@@ -41,10 +41,10 @@ Actual time needed to complete: 3 hours
 
 
 Feature #2: Filter images
-Estimate of time needed to complete: _____
-Start time: _____
-Finish time: _____
-Actual time needed to complete: _____
+Estimate of time needed to complete: 3 hours  
+Start time: 14:30
+Finish time: 17:16
+Actual time needed to complete: 3:14
 
 
 Feature #3: Style the application
