@@ -4,15 +4,30 @@ header {
   flex-direction: column;
 }
 
-ul {
+#pages {
   display: flex;
   justify-content: center;
 }
 
-li {
+#pages li {
   margin: 0 20px;
-  transition: all .15s;
+  /* color: #3D3D3D; */
+}
+
+#sort-by {
+  margin-top: 30px;
+}
+
+span {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 20px;
   color: #3D3D3D;
+  /* text-decoration: underline; */
+}
+
+#sort-by li {
+  padding-bottom: 8px;
 }
 
 li:hover {
@@ -57,7 +72,7 @@ main {
 section {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: center;
   width: 100%;
 }
 
@@ -65,7 +80,8 @@ div {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 30%;
+  width: 25%;
+  margin: 4%;
 }
 
 img {
