@@ -41,10 +41,10 @@ Actual time needed to complete: 1:05
 
 
 Feature #2: Templating
-Estimate of time needed to complete: 
+Estimate of time needed to complete: 3 hours
 Start time: 
 Finish time: 
-Actual time needed to complete: 
+Actual time needed to complete: 6 hours
 
 
 Feature #3: Styling with Flexbox
