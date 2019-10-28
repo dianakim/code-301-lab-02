@@ -57,5 +57,5 @@ Actual time needed to complete: 2 hours
 Feature #4: Sort the images
 Estimate of time needed to complete: 2 hours
 Start time: 21:40
-Finish time: _____
-Actual time needed to complete: _____
+Finish time: 22:59_
+Actual time needed to complete: 1:19
