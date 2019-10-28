@@ -50,12 +50,12 @@ Actual time needed to complete: 6 hours
 Feature #3: Styling with Flexbox
 EEstimate of time needed to complete: 2 hours
 Start time: 19:38
-Finish time: 
-Actual time needed to complete: 
+Finish time: 21:37  
+Actual time needed to complete: 2 hours
 
 
-Stretch Goal: Sort the images
-Estimate of time needed to complete: _____
-Start time: _____
+Feature #4: Sort the images
+Estimate of time needed to complete: 2 hours
+Start time: 21:40
 Finish time: _____
 Actual time needed to complete: _____

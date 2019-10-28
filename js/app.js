@@ -37,6 +37,8 @@ Image.getJsonData = (filePath) => {
 };
 
 Image.loadImages = () => {
+  $('div').remove();
+  console.log('loading images');
   Image.allImages.forEach(imageToRender => {
     $('#photos-container').append(imageToRender.toHtml());
   });
@@ -75,6 +77,23 @@ $('.page').on('click', function() {
     jsonFilePath = 'data/page-2.json';
   }
   Image.getJsonData(jsonFilePath);
+});
+
+Image.sortBy = (sortCategory) => {
+  Image.allImages.sort((a, b) => {
+    console.log('a[sortCategory]: ', a[sortCategory]);
+    console.log('b[sortCategory]: ', b[sortCategory]);
+    return (a[sortCategory] > b[sortCategory]) ? 1 : (a[sortCategory] < b[sortCategory]) ? -1 : 0;
+  });
+  console.log('sorted Image.allImages: ', Image.allImages);
+};
+
+$('.sort').on('click', function() {
+  let $selection = ($(this).text()).toLowerCase();
+  // Image.sortBy(Image.allImages, $selection);
+  Image.sortBy($selection);
+
+  Image.loadImages();
 });
 
 $(() => {
