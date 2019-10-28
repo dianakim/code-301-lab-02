@@ -54,20 +54,8 @@ Image.loadFilterList = () => {
   // for each item in allKeywords, add a new dropdown list item
   $.each(allKeywords, function(index, value){
     console.log('current keyword from Image.loadFilterList: ', value);
-    filterContainer.append(`<option class="${value}">${value}</option> `);
-
-
-
-    // $('select').append('<option class="keyword-clone"></option>');
-    // let keywordOptionClone = $('option[class="keyword-clone"]');
-    // keywordOptionClone.text(value);
-    // keywordOptionClone.removeClass('keyword-clone');
-    // keywordOptionClone.attr('class', value);
+    filterContainer.append(`<option value="${value}">${value}</option> `);
   });
-
-
-
-
 };
 
 $('select[name="keyword"]').on('change', function() {

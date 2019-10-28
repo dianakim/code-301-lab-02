@@ -11,9 +11,9 @@
     <link href="https://fonts.googleapis.com/css?family=Alice|Forum&display=swap" rel="stylesheet">
 
     <script id="photo-template" type="text/x-handlebars-template">
-      <div>
+      <div data-keyword={{keyword}}>
         <h2>{{title}}</h2>
-        <img src="{{image_url}}" data-keyword="{{title}}" alt="{{title}}">
+        <img src="{{image_url}}" alt="{{title}}">
         <p>{{description}}</p>
       </div>
     </script>
