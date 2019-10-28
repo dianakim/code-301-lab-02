@@ -29,6 +29,7 @@ Image.getJsonData = (filePath) => {
     .then(data => {
       data.forEach(item => {
         Image.allImages.push(new Image(item));
+        Image.sortBy('title');
         populateUniqueKeywordsArr(item.keyword);
       });
     })
@@ -39,6 +40,7 @@ Image.getJsonData = (filePath) => {
 Image.loadImages = () => {
   $('div').remove();
   console.log('loading images');
+  console.log('Image.allImages from .loadImages: ', Image.allImages);
   Image.allImages.forEach(imageToRender => {
     $('#photos-container').append(imageToRender.toHtml());
   });
@@ -92,7 +94,6 @@ $('.sort').on('click', function() {
   let $selection = ($(this).text()).toLowerCase();
   // Image.sortBy(Image.allImages, $selection);
   Image.sortBy($selection);
-
   Image.loadImages();
 });
 
