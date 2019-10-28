@@ -1,5 +1,7 @@
 'use strict';
 
+let allKeywords = [];
+
 function Image(image) {
   this.image_url = image.image_url;
   this.title = image.title;
@@ -9,7 +11,6 @@ function Image(image) {
 }
 
 Image.allImages = [];
-let allKeywords = [];
 
 Image.prototype.toHtml = function() {
   let template = $('#photo-template').html();
@@ -17,14 +18,25 @@ Image.prototype.toHtml = function() {
   return templateRender(this);
 };
 
+function populateUniqueKeywordsArr(key) {
+  console.log('key from popoulateUniqueKeywordsArr: ', key);
+  if (!allKeywords.includes(key)) {
+    allKeywords.push(key);
+  }
+}
+
 Image.getJsonData = (filePath) => {
   $.get(filePath, 'json')
     .then(data => {
       data.forEach(item => {
         Image.allImages.push(new Image(item));
+        populateUniqueKeywordsArr(item.keyword);
+        console.log('item.keyword from Image.getJsonData: ', item.keyword);
       });
+      console.log('allKeywords from Image.getJsonData: ', allKeywords);
     })
-    .then(Image.loadImages);
+    .then(Image.loadImages)
+    .then(Image.loadFilterList);
 };
 
 Image.loadImages = () => {
@@ -34,20 +46,28 @@ Image.loadImages = () => {
 };
 
 Image.loadFilterList = () => {
-  // first, remove duplicate values in allKeywords array
-  const uniqueKeywords = Array.from(new Set(allKeywords));
-  let keyList = $('select[id="keyword-dropdown"]');
-  // empty dropdown list
-  keyList.find('option').not(':first').remove();
-  
-  // for each item in uniqueKeywords, add a new dropdown list item
-  $.each(uniqueKeywords, function(index, value){
-    $('select').append('<option class="keyword-clone"></option>');
-    let keywordOptionClone = $('option[class="keyword-clone"]');
-    keywordOptionClone.text(value);
-    keywordOptionClone.removeClass('keyword-clone');
-    keywordOptionClone.attr('class', value);
+  // empty filter dropdown list except for the first option
+  let filterContainer = $('select[id="filters-container"]');
+  console.log('filterContainer from Image.loadFilterList: ', filterContainer);
+  filterContainer.find('option').not(':first').remove();
+
+  // for each item in allKeywords, add a new dropdown list item
+  $.each(allKeywords, function(index, value){
+    console.log('current keyword from Image.loadFilterList: ', value);
+    filterContainer.append(`<option class="${value}">${value}</option> `);
+
+
+
+    // $('select').append('<option class="keyword-clone"></option>');
+    // let keywordOptionClone = $('option[class="keyword-clone"]');
+    // keywordOptionClone.text(value);
+    // keywordOptionClone.removeClass('keyword-clone');
+    // keywordOptionClone.attr('class', value);
   });
+
+
+
+
 };
 
 $('select[name="keyword"]').on('change', function() {
@@ -76,5 +96,5 @@ $('.page').on('click', function() {
 $(() => {
   Image.getJsonData('data/page-1.json');
   Image.loadImages();
-  Image.loadFilterList();
+  // Image.loadFilterList();
 });
