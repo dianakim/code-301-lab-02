@@ -9,6 +9,14 @@
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/module.css">
     <link href="https://fonts.googleapis.com/css?family=Alice|Forum&display=swap" rel="stylesheet">
+
+    <script id="photo-template" type="text/x-handlebars-template">
+      <div>
+        <h2>{{title}}</h2>
+        <img src="{{image_url}}" data-keyword="{{title}}" alt="{{title}}">
+        <p>{{description}}</p>
+      </div>
+    </script>
   </head>
   <body>
     <header>
@@ -24,10 +32,7 @@
       </nav>
     </header>
     <main>
-      <section id="photo-template">
-        <h2></h2>
-        <img src="" data-keyword="" alt="">
-        <p></p>
+      <section id="photos-container">  
       </section>
     </main>
     <footer>
