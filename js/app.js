@@ -19,7 +19,6 @@ Image.prototype.toHtml = function() {
 };
 
 function populateUniqueKeywordsArr(key) {
-  console.log('key from popoulateUniqueKeywordsArr: ', key);
   if (!allKeywords.includes(key)) {
     allKeywords.push(key);
   }
@@ -31,9 +30,7 @@ Image.getJsonData = (filePath) => {
       data.forEach(item => {
         Image.allImages.push(new Image(item));
         populateUniqueKeywordsArr(item.keyword);
-        console.log('item.keyword from Image.getJsonData: ', item.keyword);
       });
-      console.log('allKeywords from Image.getJsonData: ', allKeywords);
     })
     .then(Image.loadImages)
     .then(Image.loadFilterList);
@@ -48,12 +45,11 @@ Image.loadImages = () => {
 Image.loadFilterList = () => {
   // empty filter dropdown list except for the first option
   let filterContainer = $('select[id="filters-container"]');
-  console.log('filterContainer from Image.loadFilterList: ', filterContainer);
+
   filterContainer.find('option').not(':first').remove();
 
   // for each item in allKeywords, add a new dropdown list item
   $.each(allKeywords, function(index, value){
-    console.log('current keyword from Image.loadFilterList: ', value);
     filterContainer.append(`<option value="${value}">${value}</option> `);
   });
 };
@@ -83,6 +79,4 @@ $('.page').on('click', function() {
 
 $(() => {
   Image.getJsonData('data/page-1.json');
-  Image.loadImages();
-  // Image.loadFilterList();
 });
