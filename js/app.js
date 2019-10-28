@@ -19,7 +19,6 @@ Image.prototype.toHtml = function() {
 };
 
 function populateUniqueKeywordsArr(key) {
-  console.log('key from popoulateUniqueKeywordsArr: ', key);
   if (!allKeywords.includes(key)) {
     allKeywords.push(key);
   }
